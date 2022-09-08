@@ -1,0 +1,12 @@
+.matches-finalstage-inline {
+    display: flex;
+    flex-direction: column;
+}
+
+.matchGoals, .matchPenalties {
+    display: flex;
+}
+
+img.champion {
+    width: 100%;
+}

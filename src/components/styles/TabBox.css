@@ -1,0 +1,26 @@
+.tabBox {
+  width: 750px;
+  min-height: 500px;
+  background-color: white;
+}
+
+@media (max-width: 750px) {
+  .tabBox {
+    width: 100vw;
+  }
+}
+
+.tabMain {
+	width: 50%;
+}
+
+.tablist {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.centered-table {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
