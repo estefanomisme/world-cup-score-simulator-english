@@ -14,7 +14,6 @@ function Match ({match, setScore}) {
       </div>
       <div className="match-score">
         <div className="label-home">
-          {/* <Flag8Star labelFor="home" nameTeam={match.home.name} flagTeam={`./images/${homeTeamLogo}`}/>  */}
           <label
             htmlFor={`match_${match.match}-${match.home.name.toLowerCase()}`}>
             {match.home.name}
@@ -39,7 +38,6 @@ function Match ({match, setScore}) {
           <label htmlFor={`match_${match.match}-${match.away.name.toLowerCase()}`}>
             {match.away.name}
           </label>
-          {/* <Flag8Star labelFor="away" nameTeam={match.away.name} flagTeam={`./images/${awayTeamLogo}`}/> */}
         </div>
       </div>
     </div>

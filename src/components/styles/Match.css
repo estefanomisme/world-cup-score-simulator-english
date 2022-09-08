@@ -70,6 +70,8 @@ input[type='tel'] {
     background-color: rgb(56, 69, 88);
     color: rgb(230, 224, 228);
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .label-away, .label-home {

@@ -233,46 +233,59 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
 	return (
     <>
       <h2>{stage}</h2>
-      <form onSubmit={qualifyTeams}>
+      <form className="list-matches" onSubmit={qualifyTeams}>
         {matchesStage.map((match, index) => (
-          <div key={index} className='matches-finalstage-inline'>
-            <div className='matchGoals'>
-              <label
-                htmlFor={`home-${match.home.id}`} >
-                {match.home.name !== null ? match.home.name: match.home.id}
-              </label>
-              <input
-                id={`home-${match.home.id}`}
-                type="tel"
-                maxLength="2"
-                disabled={match.home.name? false: true}
-                defaultValue={match.home.goals !== null ? match.home.goals: ''}
-                onChange={(e) => setScore(match.home.name, e.target.value, 'goal', true)} />
-              <p>-</p>
-              <input
-                id={`away-${match.away.id}`}
-                type="tel"
-                maxLength="2"
-                disabled={match.away.name? false: true}
-                defaultValue={match.away.goals !== null ? match.away.goals: ''}
-                onChange={(e) => setScore(match.away.name, e.target.value, 'goal', false)} />
-              <label
-                htmlFor={`away-${match.away.id}`} >
-                {match.away.name !== null ? match.away.name: match.away.id}
-              </label>
+          <div key={index} className='matches-inline'>
+            <div className="info-date-stadium">
+              <p>{match.details}</p>
+            </div>
+            <div className={match.home.goals === match.away.goals
+              && match.home.goals !== null ?
+              "match-score with-penalty": "match-score"}>
+              <div className="label-home">
+                <label
+                  htmlFor={`home-${match.home.id}`} >
+                  {match.home.name !== null ? match.home.name: match.home.id}
+                </label>
+              </div>
+              <div className="input-score">
+                <input
+                  id={`home-${match.home.id}`}
+                  type="tel"
+                  maxLength="2"
+                  disabled={match.home.name? false: true}
+                  defaultValue={match.home.goals === null ? '' : match.home.goals}
+                  onChange={(e) => setScore(match.home.name, e.target.value, 'goal', true)} />
+                <p>-</p>
+                <input
+                  id={`away-${match.away.id}`}
+                  type="tel"
+                  maxLength="2"
+                  disabled={match.away.name? false: true}
+                  defaultValue={match.away.goals === null ? '' : match.away.goals}
+                  onChange={(e) => setScore(match.away.name, e.target.value, 'goal', false)} />
+              </div>
+              <div className="label-away">
+                <label htmlFor={`away-${match.away.id}`}>
+                  {match.away.name !== null ? match.away.name: match.away.id}
+                </label>
+              </div>
             </div>
             <div
-              className="matchPenalties"
+              className="match-score"
               style={{display: match.home.goals === match.away.goals
-                && match.home.goals !== null ?
-                'flex': 'none'}} >
-              <p>Penalties</p>
+              && match.home.goals !== null ?
+              'flex': 'none'}}>
+              <div className="div-void">
+                <p>Penalties</p>
+              </div>
+              <div className="input-score">
                 <input
                   id={`home-${match.home.id}-penalties`}
                   type="tel"
                   maxLength="2"
                   disabled={match.home.name? false: true}
-                  defaultValue={match.home.goles !== null ? match.home.penalties: ''}
+                  defaultValue={match.home.penalties === null ? '' : match.home.penalties}
                   onChange={(e) => setScore(match.home.name, e.target.value, 'penalty', true)} />
                 <p>-</p>
                 <input
@@ -280,8 +293,11 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
                   type="tel"
                   maxLength="2"
                   disabled={match.away.name? false: true}
-                  defaultValue={match.away.penalties !== null ? match.away.penalties: ''}
+                  defaultValue={match.away.penalties === null ? '' : match.away.penalties}
                   onChange={(e) => setScore(match.away.name, e.target.value, 'penalty', false)} />
+              </div>
+              <div className="div-void">
+              </div>
             </div>
           </div>
 			  ))}

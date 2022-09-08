@@ -154,7 +154,7 @@ function MatchBoard({teamsGroup, matchesGroup}) {
 				scrollToTop();
 				}}>
 				{matchesGroup.map( (match, index) => (
-					<Match match={match} key={index} setScore={setScore}/>
+					<Match match={match} key={index} setScore={setScore} />
 				))}
 				<button type="submit">Calculate</button>
 			</form>
