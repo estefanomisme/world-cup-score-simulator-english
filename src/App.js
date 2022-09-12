@@ -3,8 +3,9 @@ import TabBox from './components/TabBox';
 import { useState, createContext, Suspense } from 'react';
 import listTeams from './data/teams';
 import listMatches from './data/matches';
-import FinalScoreboard from './components/FinalScoreboard';
+import StartScreen from './components/StartScreen';
 import RangeCheck from './components/RangeCheck';
+import FinalScoreboard from './components/FinalScoreboard';
 import { useTranslation } from 'react-i18next';
 
 export const Context = createContext();
@@ -60,9 +61,7 @@ function SuspensedApp() {
   return (
     <Context.Provider value={[timezone, teams, setTeams, matches, setMatches, teamsFinalScore, setTeamsFinalScore]}>
       <div className="App">
-        <div className="start-screen">
-          <button>Iniciar</button>
-        </div>
+        <StartScreen />
         <div className="settings">
           <RangeCheck
             label="Timezone"

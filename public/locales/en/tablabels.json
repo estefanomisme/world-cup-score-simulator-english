@@ -7,5 +7,6 @@
     "Semifinals": "Semifinals",
     "Third-place-play-off": "Third-place play-off",
     "Final": "Final",
-    "Penalties": "Penalties"
+    "Penalties": "Penalties",
+    "error-penalties": "A match cannot be tied on penalties"
 }

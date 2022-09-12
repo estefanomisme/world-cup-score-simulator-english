@@ -64,7 +64,7 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
       if (match.home.penalties !== null
         && match.away.penalties !== null
         && match.home.penalties === match.away.penalties) {
-        alert("A match cannot be tied on penalties");
+        alert(t("error-penalties"));
         return;
       }
       else {

@@ -7,5 +7,6 @@
     "Semifinals": "Semifinales",
     "Third-place-play-off": "Partido por el Tercer Lugar",
     "Final": "Final",
-    "Penalties": "Penales"
+    "Penalties": "Penales",
+    "error-penalties": "Un partido no puede quedar empatado en penales"
 }
