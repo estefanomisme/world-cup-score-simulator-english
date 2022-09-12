@@ -1,13 +1,15 @@
 import { useContext } from 'react';
 import './styles/react-tabs.css';
 import './styles/MatchBoard.css';
-import { Context } from './TabBox';
+import { Context } from '../App';
 import newDataTeams from './functions/newDataTeams';
 import Match from './Match';
+import { useTranslation } from 'react-i18next';
 
 function MatchBoard({teamsGroup, matchesGroup}) {
 
-	const [teams, setTeams, matches, setMatches, , ] = useContext(Context);
+	const [, teams, setTeams, matches, setMatches, , ] = useContext(Context);
+	const [tB, ] = useTranslation('button');
 
 	const team1 = teamsGroup.filter(team => team.pot === 1)[0].name;
 	const team2 = teamsGroup.filter(team => team.pot === 2)[0].name;
@@ -150,13 +152,13 @@ function MatchBoard({teamsGroup, matchesGroup}) {
 	return (
 		<>
 			<form className="list-matches" onSubmit={(e) => {
-				sendScoresToScoreboard(e);
-				scrollToTop();
+				  sendScoresToScoreboard(e);
+				  scrollToTop();
 				}}>
 				{matchesGroup.map( (match, index) => (
 					<Match match={match} key={index} setScore={setScore} />
 				))}
-				<button type="submit">Calculate</button>
+				<button type="submit">{tB('Calculate')}</button>
 			</form>
 		</>
 	);

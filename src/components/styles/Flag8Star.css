@@ -1,6 +1,7 @@
 .svg-border-flag {
     transform: rotate(-337.5deg);
     position: absolute;
+    height: 80px;
 }
 
 .innerFlag {

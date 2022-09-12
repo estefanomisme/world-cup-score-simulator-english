@@ -7,13 +7,31 @@
     display: flex;
 }
 
-img.champion {
+.champion-container {
+    width: 90%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.champion {
     width: 100%;
+}
+
+.champion-container p {
+    margin-top: 10px;
 }
 
 input[disabled] {
     background-color: rgb(230, 224, 228);
-    border: 2px solid rgb(56, 69, 88);
+    border-left: 1px solid rgb(56, 69, 88);
+    border-right: 1px solid rgb(56, 69, 88);
+}
+
+input[disabled] + p {
+    background-color: rgb(230, 224, 228);
+    height: 100%;
 }
 
 .with-penalty {
@@ -44,4 +62,12 @@ input[disabled] {
     display: flex;
     overflow: auto;
     justify-content: center;
+}
+
+button[disabled]:hover {
+    background-color: inherit;
+}
+
+.penalty-details {
+    background-color: rgb(205, 196, 202);
 }

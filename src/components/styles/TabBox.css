@@ -1,13 +1,5 @@
 .tabBox {
-  width: 750px;
-  min-height: 500px;
-  background-color: white;
-}
-
-@media (max-width: 750px) {
-  .tabBox {
-    width: 100vw;
-  }
+  width: 100%;
 }
 
 .tabMain {
@@ -23,4 +15,16 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+}
+
+.subTab {
+  width: 100%;
+}
+
+.panel-container {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

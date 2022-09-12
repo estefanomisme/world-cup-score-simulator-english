@@ -1,3 +1,7 @@
 .tabFS {
-	width: 25%;
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 6px;
 }

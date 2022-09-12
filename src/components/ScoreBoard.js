@@ -3,28 +3,36 @@ import './styles/react-tabs.css';
 import './styles/ScoreBoard.css';
 import './styles/SuperResponsiveTableStyle.css';
 import Flag8Star from './Flag8Star';
+import { useTranslation } from 'react-i18next';
 
 function ScoreBoard({teams}) {
+
+  const [tC, ] = useTranslation('countries');
+  const [tSB, ] = useTranslation('scoreboard');
+
   return (
     <div className="centered-table">
       <Table>
         <Thead>
           <Tr>
             <Th></Th>
-            <Th className="item-nameteam">Team</Th>
-            <Th className="item-scoreboard">Pts</Th>
-            <Th className="item-scoreboard">MP</Th>
-            <Th className="item-scoreboard">W</Th>
-            <Th className="item-scoreboard">D</Th>
-            <Th className="item-scoreboard">L</Th>
-            <Th className="item-scoreboard">GF</Th>
-            <Th className="item-scoreboard">GA</Th>
-            <Th className="item-scoreboard">GD</Th>
+            <Th className="item-nameteam">{tSB('Team')}</Th>
+            <Th className="item-scoreboard">{tSB('Pts')}</Th>
+            <Th className="item-scoreboard">{tSB('MP')}</Th>
+            <Th className="item-scoreboard">{tSB('W')}</Th>
+            <Th className="item-scoreboard">{tSB('D')}</Th>
+            <Th className="item-scoreboard">{tSB('L')}</Th>
+            <Th className="item-scoreboard">{tSB('GF')}</Th>
+            <Th className="item-scoreboard">{tSB('GA')}</Th>
+            <Th className="item-scoreboard">{tSB('GD')}</Th>
           </Tr>
         </Thead>
         <Tbody>
           {teams.map((team, index) => (
-            <Tr key={index} className={team.qualified !== 'groupStage' ? 'qualified': ''}>
+            <Tr
+              key={index}
+              className={team.qualified !== 'groupStage' ? 'qualified': ''}
+              aftercontent={tSB('Q')}>
               <Td className="item-flag">
                 <Flag8Star className="item-original-flag" nameTeam={team.name} flagTeam={`./images/${team.logo}`}/> 
               </Td>
@@ -33,7 +41,7 @@ function ScoreBoard({teams}) {
                   <div className="flag-container">
                     <Flag8Star className="item-responsive-flag" nameTeam={team.name} flagTeam={`./images/${team.logo}`}/>
                   </div>
-                  <p className="nameteam">{team.name}</p>
+                  <p className="nameteam">{tC(team.name.replace(' ', '-'))}</p>
                 </div>
               </Td>
               <Td className="item-scoreboard">

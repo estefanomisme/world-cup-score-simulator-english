@@ -4,7 +4,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Qatar', goals: 1 },
     away: { name: 'Ecuador', goals: 2 },
-    details: '20 November 2022 19:00 Al Bayt Stadium, Al Khor'
+    date: '20 November 2022 19:00',
+    stadium: 'albayt'
   },
   {
     id: 2,
@@ -12,7 +13,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Senegal', goals: 1 },
     away: { name: 'Netherlands', goals: 2 },
-    details: '21 November 2022 19:00 Al Thumama Stadium, Doha'
+    date: '21 November 2022 19:00',
+    stadium: 'althumama'
   },
   {
     id: 3,
@@ -20,7 +22,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Netherlands', goals: 2 },
     away: { name: 'Ecuador', goals: 0 },
-    details: '25 November 2022 19:00 Khalifa International Stadium, Al Rayyan'
+    date: '25 November 2022 19:00',
+    stadium: 'khalifa'
   },
   {
     id: 4,
@@ -28,7 +31,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Qatar', goals: 1 },
     away: { name: 'Senegal', goals: 4 },
-    details: '25 November 2022 16:00 Al Thumama Stadium, Doha'
+    date: '25 November 2022 16:00',
+    stadium: 'althumama'
   },
   {
     id: 5,
@@ -36,7 +40,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Netherlands', goals: 3 },
     away: { name: 'Qatar', goals: 0 },
-    details: '29 November 2022 18:00 Al Bayt Stadium, Al Khor'
+    date: '29 November 2022 18:00',
+    stadium: 'albayt'
   },
   {
     id: 6,
@@ -44,7 +49,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Ecuador', goals: 1 },
     away: { name: 'Senegal', goals: 1 },
-    details: '29 November 2022 18:00 Khalifa International Stadium, Al Rayyan'
+    date: '29 November 2022 18:00',
+    stadium: 'khalifa'
   },
   {
     id: 7,
@@ -52,7 +58,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'England', goals: 3 },
     away: { name: 'Iran', goals: 1 },
-    details: '21 November 2022 16:00 Khalifa International Stadium, Al Rayyan'
+    date: '21 November 2022 16:00',
+    stadium: 'khalifa'
   },
   {
     id: 8,
@@ -60,7 +67,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'United States', goals: 2 },
     away: { name: 'Wales', goals: 1 },
-    details: '21 November 2022 22:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '21 November 2022 22:00',
+    stadium: 'ahmad'
   },
   {
     id: 9,
@@ -68,7 +76,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Wales', goals: 2 },
     away: { name: 'Iran', goals: 1 },
-    details: '25 November 2022 13:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '25 November 2022 13:00',
+    stadium: 'ahmad'
   },
   {
     id: 10,
@@ -76,7 +85,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'England', goals: 2 },
     away: { name: 'United States', goals: 2 },
-    details: '25 November 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '25 November 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 11,
@@ -84,7 +94,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Wales', goals: 1 },
     away: { name: 'England', goals: 2 },
-    details: '29 November 2022 22:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '29 November 2022 22:00',
+    stadium: 'ahmad'
   },
   {
     id: 12,
@@ -92,7 +103,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Iran', goals: 0 },
     away: { name: 'United States', goals: 1 },
-    details: '29 November 2022 22:00 Al Thumama Stadium, Doha'
+    date: '29 November 2022 22:00',
+    stadium: 'althumama'
   },
   {
     id: 13,
@@ -100,7 +112,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Argentina', goals: 3 },
     away: { name: 'Saudi Arabia', goals: 0 },
-    details: '22 November 2022 13:00 Lusail Iconic Stadium, Lusail'
+    date: '22 November 2022 13:00',
+    stadium: 'lusail'
   },
   {
     id: 14,
@@ -108,7 +121,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Mexico', goals: 0 },
     away: { name: 'Poland', goals: 1 },
-    details: '22 November 2022 19:00 Stadium 974, Doha'
+    date: '22 November 2022 19:00',
+    stadium: 's974'
   },
   {
     id: 15,
@@ -116,7 +130,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Poland', goals: 1 },
     away: { name: 'Saudi Arabia', goals: 0 },
-    details: '26 November 2022 16:00 Education City Stadium, Al Rayyan'
+    date: '26 November 2022 16:00',
+    stadium: 'education'
   },
   {
     id: 16,
@@ -124,7 +139,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Argentina', goals: 2 },
     away: { name: 'Mexico', goals: 0 },
-    details: '26 November 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '26 November 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 17,
@@ -132,7 +148,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Poland', goals: 1 },
     away: { name: 'Argentina', goals: 2 },
-    details: '30 November 2022 22:00 Stadium 974, Doha'
+    date: '30 November 2022 22:00',
+    stadium: 's974'
   },
   {
     id: 18,
@@ -140,7 +157,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Saudi Arabia', goals: 0 },
     away: { name: 'Mexico', goals: 0 },
-    details: '30 November 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '30 November 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 19,
@@ -148,7 +166,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'France', goals: 2 },
     away: { name: 'Australia', goals: 1 },
-    details: '22 November 2022 22:00 Al Janoub Stadium, Al Wakrah'
+    date: '22 November 2022 22:00',
+    stadium: 'aljanoub'
   },
   {
     id: 20,
@@ -156,7 +175,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Denmark', goals: 3 },
     away: { name: 'Tunisia', goals: 0 },
-    details: '22 November 2022 16:00 Education City Stadium, Al Rayyan'
+    date: '22 November 2022 16:00',
+    stadium: 'education'
   },
   {
     id: 21,
@@ -164,7 +184,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Tunisia', goals: 1 },
     away: { name: 'Australia', goals: 1 },
-    details: '26 November 2022 13:00 Al Janoub Stadium, Al Wakrah'
+    date: '26 November 2022 13:00',
+    stadium: 'aljanoub'
   },
   {
     id: 22,
@@ -172,7 +193,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'France', goals: 0 },
     away: { name: 'Denmark', goals: 1 },
-    details: '26 November 2022 19:00 Stadium 974, Doha'
+    date: '26 November 2022 19:00',
+    stadium: 's974'
   },
   {
     id: 23,
@@ -180,7 +202,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Tunisia', goals: 0 },
     away: { name: 'France', goals: 2 },
-    details: '30 November 2022 18:00 Education City Stadium, Al Rayyan'
+    date: '30 November 2022 18:00',
+    stadium: 'education'
   },
   {
     id: 24,
@@ -188,7 +211,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Australia', goals: 1 },
     away: { name: 'Denmark', goals: 1 },
-    details: '30 November 2022 18:00 Al Janoub Stadium, Al Wakrah'
+    date: '30 November 2022 18:00',
+    stadium: 'aljanoub'
   },
   {
     id: 25,
@@ -196,7 +220,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Spain', goals: 3 },
     away: { name: 'Costa Rica', goals: 1 },
-    details: '23 November 2022 19:00 Al Thumama Stadium, Doha'
+    date: '23 November 2022 19:00',
+    stadium: 'althumama'
   },
   {
     id: 26,
@@ -204,7 +229,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Germany', goals: 2 },
     away: { name: 'Japan', goals: 2 },
-    details: '23 November 2022 16:00 Khalifa International Stadium, Al Rayyan'
+    date: '23 November 2022 16:00',
+    stadium: 'khalifa'
   },
   {
     id: 27,
@@ -212,7 +238,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Japan', goals: 2 },
     away: { name: 'Costa Rica', goals: 1 },
-    details: '27 November 2022 13:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '27 November 2022 13:00',
+    stadium: 'ahmad'
   },
   {
     id: 28,
@@ -220,7 +247,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Spain', goals: 1 },
     away: { name: 'Germany', goals: 1 },
-    details: '27 November 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '27 November 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 29,
@@ -228,7 +256,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Japan', goals: 1 },
     away: { name: 'Spain', goals: 2 },
-    details: '1 December 2022 22:00 Khalifa International Stadium, Al Rayyan'
+    date: '1 December 2022 22:00',
+    stadium: 'khalifa'
   },
   {
     id: 30,
@@ -236,7 +265,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Costa Rica', goals: 0 },
     away: { name: 'Germany', goals: 2 },
-    details: '1 December 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '1 December 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 31,
@@ -244,7 +274,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Belgium', goals: 1 },
     away: { name: 'Canada', goals: 1 },
-    details: '23 November 2022 22:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '23 November 2022 22:00',
+    stadium: 'ahmad'
   },
   {
     id: 32,
@@ -252,7 +283,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Morocco', goals: 1 },
     away: { name: 'Croatia', goals: 2 },
-    details: '23 November 2022 13:00 Al Bayt Stadium, Al Khor'
+    date: '23 November 2022 13:00',
+    stadium: 'albayt'
   },
   {
     id: 33,
@@ -260,7 +292,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Croatia', goals: 2 },
     away: { name: 'Canada', goals: 1 },
-    details: '27 November 2022 19:00 Khalifa International Stadium, Al Rayyan'
+    date: '27 November 2022 19:00',
+    stadium: 'khalifa'
   },
   {
     id: 34,
@@ -268,7 +301,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Belgium', goals: 2 },
     away: { name: 'Morocco', goals: 0 },
-    details: '27 November 2022 16:00 Al Thumama Stadium, Doha'
+    date: '27 November 2022 16:00',
+    stadium: 'althumama'
   },
   {
     id: 35,
@@ -276,7 +310,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Croatia', goals: 1 },
     away: { name: 'Belgium', goals: 1 },
-    details: '1 December 2022 18:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '1 December 2022 18:00',
+    stadium: 'ahmad'
   },
   {
     id: 36,
@@ -284,7 +319,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Canada', goals: 1 },
     away: { name: 'Morocco', goals: 0 },
-    details: '1 December 2022 18:00 Al Thumama Stadium, Doha'
+    date: '1 December 2022 18:00',
+    stadium: 'althumama'
   },
   {
     id: 37,
@@ -292,7 +328,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Brazil', goals: 3 },
     away: { name: 'Serbia', goals: 1 },
-    details: '24 November 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '24 November 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 38,
@@ -300,7 +337,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Switzerland', goals: 1 },
     away: { name: 'Cameroon', goals: 1 },
-    details: '24 November 2022 13:00 Al Janoub Stadium, Al Wakrah'
+    date: '24 November 2022 13:00',
+    stadium: 'aljanoub'
   },
   {
     id: 39,
@@ -308,7 +346,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Cameroon', goals: 2 },
     away: { name: 'Serbia', goals: 1 },
-    details: '28 November 2022 13:00 Al Janoub Stadium, Al Wakrah'
+    date: '28 November 2022 13:00',
+    stadium: 'aljanoub'
   },
   {
     id: 40,
@@ -316,7 +355,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Brazil', goals: 1 },
     away: { name: 'Switzerland', goals: 0 },
-    details: '28 November 2022 19:00 Stadium 974, Doha'
+    date: '28 November 2022 19:00',
+    stadium: 's974'
   },
   {
     id: 41,
@@ -324,7 +364,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Cameroon', goals: 0 },
     away: { name: 'Brazil', goals: 2 },
-    details: '2 December 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '2 December 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 42,
@@ -332,7 +373,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Serbia', goals: 1 },
     away: { name: 'Switzerland', goals: 1 },
-    details: '2 December 2022 22:00 Stadium 974, Doha'
+    date: '2 December 2022 22:00',
+    stadium: 's974'
   },
   {
     id: 43,
@@ -340,7 +382,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Portugal', goals: 2 },
     away: { name: 'Ghana', goals: 2 },
-    details: '24 November 2022 19:00 Stadium 974, Doha'
+    date: '24 November 2022 19:00',
+    stadium: 's974'
   },
   {
     id: 44,
@@ -348,7 +391,8 @@ const listMatches = [{
     match: 1,
     home: { name: 'Uruguay', goals: 2 },
     away: { name: 'South Korea', goals: 1 },
-    details: '24 November 2022 16:00 Education City Stadium, Al Rayyan'
+    date: '24 November 2022 16:00',
+    stadium: 'education'
   },
   {
     id: 45,
@@ -356,7 +400,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'South Korea', goals: 1 },
     away: { name: 'Ghana', goals: 1 },
-    details: '28 November 2022 16:00 Education City Stadium, Al Rayyan'
+    date: '28 November 2022 16:00',
+    stadium: 'education'
   },
   {
     id: 46,
@@ -364,7 +409,8 @@ const listMatches = [{
     match: 2,
     home: { name: 'Portugal', goals: 0 },
     away: { name: 'Uruguay', goals: 1 },
-    details: '28 November 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '28 November 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 47,
@@ -372,7 +418,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'South Korea', goals: 0 },
     away: { name: 'Portugal', goals: 1 },
-    details: '2 December 2022 18:00 Education City Stadium, Al Rayyan'
+    date: '2 December 2022 18:00',
+    stadium: 'education'
   },
   {
     id: 48,
@@ -380,7 +427,8 @@ const listMatches = [{
     match: 3,
     home: { name: 'Ghana', goals: 1 },
     away: { name: 'Uruguay', goals: 2 },
-    details: '2 December 2022 18:00 Al Janoub Stadium, Al Wakrah'
+    date: '2 December 2022 18:00',
+    stadium: 'aljanoub'
   },
   {
     id: 49,
@@ -390,7 +438,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2B', name: null, goals: null, penalties: null },
-    details: '3 December 2022 18:00 Khalifa International Stadium, Al Rayyan'
+    date: '3 December 2022 18:00',
+    stadium: 'khalifa'
   },
   {
     id: 50,
@@ -400,7 +449,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2D', name: null, goals: null, penalties: null },
-    details: '3 December 2022 22:00 Ahmad bin Ali Stadium, Al Rayyan'
+    date: '3 December 2022 22:00',
+    stadium: 'ahmad'
   },
   {
     id: 51,
@@ -410,7 +460,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2F', name: null, goals: null, penalties: null },
-    details: '5 December 2022 18:00 Al Janoub Stadium, Al Wakrah'
+    date: '5 December 2022 18:00',
+    stadium: 'aljanoub'
   },
   {
     id: 52,
@@ -420,7 +471,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2H', name: null, goals: null, penalties: null },
-    details: '5 December 2022 22:00 Stadium 974, Doha'
+    date: '5 December 2022 22:00',
+    stadium: 's974'
   },
   {
     id: 53,
@@ -430,7 +482,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2A', name: null, goals: null, penalties: null },
-    details: '4 December 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '4 December 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 54,
@@ -440,7 +493,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2C', name: null, goals: null, penalties: null },
-    details: '4 December 2022 18:00 Al Thumama Stadium, Doha'
+    date: '4 December 2022 18:00',
+    stadium: 'althumama'
   },
   {
     id: 55,
@@ -450,7 +504,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2E', name: null, goals: null, penalties: null },
-    details: '6 December 2022 18:00 Education City Stadium, Al Rayyan'
+    date: '6 December 2022 18:00',
+    stadium: 'education'
   },
   {
     id: 56,
@@ -460,7 +515,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: '2G', name: null, goals: null, penalties: null },
-    details: '6 December 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '6 December 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 57,
@@ -470,7 +526,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP50', name: null, goals: null, penalties: null },
-    details: '9 December 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '9 December 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 58,
@@ -480,7 +537,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP52', name: null, goals: null, penalties: null },
-    details: '9 December 2022 18:00 Education City Stadium, Al Rayyan'
+    date: '9 December 2022 18:00',
+    stadium: 'education'
   },
   {
     id: 59,
@@ -490,7 +548,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP54', name: null, goals: null, penalties: null },
-    details: '10 December 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '10 December 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 60,
@@ -500,7 +559,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP56', name: null, goals: null, penalties: null },
-    details: '10 December 2022 18:00 Al Thumama Stadium, Doha'
+    date: '10 December 2022 18:00',
+    stadium: 'althumama'
   },
   {
     id: 61,
@@ -510,7 +570,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP58', name: null, goals: null, penalties: null },
-    details: '13 December 2022 22:00 Lusail Iconic Stadium, Lusail'
+    date: '13 December 2022 22:00',
+    stadium: 'lusail'
   },
   {
     id: 62,
@@ -520,7 +581,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP60', name: null, goals: null, penalties: null },
-    details: '14 December 2022 22:00 Al Bayt Stadium, Al Khor'
+    date: '14 December 2022 22:00',
+    stadium: 'albayt'
   },
   {
     id: 63,
@@ -530,7 +592,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'PP62', name: null, goals: null, penalties: null },
-    details: '17 December 2022 18:00 Khalifa International Stadium, Al Rayyan'
+    date: '17 December 2022 18:00',
+    stadium: 'khalifa'
   },
   {
     id: 64,
@@ -540,7 +603,8 @@ const listMatches = [{
     winner: null,
     loser: null,
     away: { id: 'GP62', name: null, goals: null, penalties: null },
-    details: '18 December 2022 18:00 Lusail Iconic Stadium, Lusail'
+    date: '18 December 2022 18:00',
+    stadium: 'lusail'
   },
 ]
 

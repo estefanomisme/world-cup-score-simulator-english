@@ -19,9 +19,14 @@
 	min-width: 50px;
 } */
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: calc(40em + 1px)) {
+
+	th.item-nameteam {
+		text-align: left;
+	}
+
 	.item-nameteam {
-		width: 160px;
+		width: 110px;
 	}
 
 	.item-scoreboard {
@@ -29,7 +34,7 @@
 	}
 
 	.responsiveTable {
-	 width: 600px;
+	 width: 480px;
 	}
 
 	tr {
@@ -44,7 +49,8 @@
 
 	.item-original-flag {
 		display: block;
-		top: -40px;
+		top: -16px;
+		left: 32px;
 	}
 
 	.item-responsive-flag {
@@ -53,9 +59,9 @@
 
 	tr.qualified::after {
 		background-color: lightgreen;
-		width: 40px;
+		width: 36.47px;
 		height: 50px;
-		content: 'Q';
+		content: attr(aftercontent);
 		display: flex;
 		justify-content: center;
     	align-items: center;
@@ -79,7 +85,7 @@
 	}
 
 	.responsiveTable td .tdBefore {
-		width: 20% !important;
+		width: 30% !important;
 	}
 
 	.svg-border-flag.item-original-flag {

@@ -1,10 +1,19 @@
 import { useContext } from 'react';
-import { Context } from './TabBox';
+import { Context } from '../App';
 import newDataTeams from './functions/newDataTeams';
-import './styles/PanelKOStage.css'
+import qatarTZtoLocalTZString, { monthName } from './functions/qatarTZtoLocalTZString';
+import './styles/PanelKOStage.css';
+import { useTranslation } from 'react-i18next';
 
 function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion}) {
-  const [teams, setTeams,
+
+  const [t, ] = useTranslation('tablabels');
+  const [tB, ] = useTranslation('button');
+  const [tC, ] = useTranslation('countries');
+  const [tM, ] = useTranslation('months');
+  const [tS, ] = useTranslation('stadiums');
+
+  const [timezone, teams, setTeams,
     matches, setMatches,
     , setTeamsFinalScoreboard] = useContext(Context);
 
@@ -230,14 +239,40 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
     setTeamsFinalScoreboard([...updatedFinalScoreboard]);
   };
 
+  function scrollToScoreBoard() {
+		window.location.replace("#FinalScoreboard");
+	}
+
+  function translateMonthFromString (dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = tM(monthName[date.getMonth()]);
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    let minutes = date.getMinutes();
+
+    if (minutes < 10) {minutes = '0' + minutes.toString()};
+
+    return (`${day} ${month} ${year} ${hours}:${minutes}`)
+  }
+
 	return (
     <>
-      <h2>{stage}</h2>
-      <form className="list-matches" onSubmit={qualifyTeams}>
+      <h2>{t(stage.replaceAll(' ', '-'))}</h2>
+      <form className="list-matches" onSubmit={(e) => {
+          qualifyTeams(e);
+          if (stage !== 'Final') {
+            scrollToScoreBoard();
+          }
+        }}>
         {matchesStage.map((match, index) => (
           <div key={index} className='matches-inline'>
             <div className="info-date-stadium">
-              <p>{match.details}</p>
+              <p>{translateMonthFromString(
+                  timezone === 'Qatar' ?
+                  match.date:
+                  qatarTZtoLocalTZString(match.date)
+                )} - {tS(match.stadium)}</p>
             </div>
             <div className={match.home.goals === match.away.goals
               && match.home.goals !== null ?
@@ -245,7 +280,7 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
               <div className="label-home">
                 <label
                   htmlFor={`home-${match.home.id}`} >
-                  {match.home.name !== null ? match.home.name: match.home.id}
+                  {match.home.name !== null ? tC(match.home.name.replaceAll(' ', '-')): match.home.id}
                 </label>
               </div>
               <div className="input-score">
@@ -267,17 +302,17 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
               </div>
               <div className="label-away">
                 <label htmlFor={`away-${match.away.id}`}>
-                  {match.away.name !== null ? match.away.name: match.away.id}
+                  {match.away.name !== null ? tC(match.away.name.replaceAll(' ', '-')): match.away.id}
                 </label>
               </div>
             </div>
             <div
-              className="match-score"
+              className="match-score penalty-details"
               style={{display: match.home.goals === match.away.goals
               && match.home.goals !== null ?
               'flex': 'none'}}>
               <div className="div-void">
-                <p>Penalties</p>
+                <p>{t('Penalties')}</p>
               </div>
               <div className="input-score">
                 <input
@@ -310,7 +345,7 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
             ||(match.home.goals === match.away.goals
               && match.home.penalties != null && match.away.penalties != null))))?
             false: true}
-          >Calculate</button>
+          >{tB('Calculate')}</button>
       </form>
     </>
 	);
@@ -318,7 +353,7 @@ function StageTemplate ({stage, matchesStage, enableScoreboard, defineChampion})
 
 export function PanelRound16 ({enableScoreboard}) {
 
-	const [, , matches, ] = useContext(Context);
+	const [, , , matches, ] = useContext(Context);
 
 	const stage = 'Round of 16';
 
@@ -327,36 +362,45 @@ export function PanelRound16 ({enableScoreboard}) {
     .sort((x, y) => x.id - y.id);
 
 	return (
-		<StageTemplate className='R16Template' stage={stage} matchesStage={matchesStage} enableScoreboard={enableScoreboard} />
+    <div className="panel-container">
+      <StageTemplate className='R16Template' stage={stage} matchesStage={matchesStage} enableScoreboard={enableScoreboard} />
+    </div>
 	)
 }
 
 export function PanelQuarterFinals () {
-  const [, , matches, ] = useContext(Context);
+  const [, , , matches, ] = useContext(Context);
 	const stage = 'Quarter Finals';
 	const matchesStage = matches
     .filter( match => match.group === 'quarterFinals')
     .sort((x, y) => x.id - y.id);
 
 	return (
-		<StageTemplate className='QFTemplate' stage={stage} matchesStage={matchesStage} />
+    <div className="panel-container">
+      <StageTemplate className='QFTemplate' stage={stage} matchesStage={matchesStage} />
+    </div>
 	);
 }
 
 export function PanelSemifinals () {
-  const [, , matches, ] = useContext(Context);
+  const [, , , matches, ] = useContext(Context);
 	const stage = 'Semifinals';
 	const matchesStage = matches
     .filter( match => match.group === 'semifinals')
     .sort((x, y) => x.id - y.id);
 
 	return (
-		<StageTemplate className='SFTemplate' stage={stage} matchesStage={matchesStage} />
+    <div className="panel-container">
+      <StageTemplate className='SFTemplate' stage={stage} matchesStage={matchesStage} />
+    </div>
 	);
 }
 
 export function PanelFinal ({defineChampion, champion}) {
-  const [teams, , matches, ] = useContext(Context);
+  const [, teams, , matches, ] = useContext(Context);
+  const [tC, ] = useTranslation('countries');
+  const [tCh, ] = useTranslation('champion');
+
   const match3rdPlace = matches
   .filter( match => match.group === '3rdPlacePlayOff')
   .sort((x, y) => x.id - y.id);
@@ -366,16 +410,17 @@ export function PanelFinal ({defineChampion, champion}) {
   const strImgChampion = champion? teams.filter(team => team.name === champion)[0].imgchampion: '';
 
 	return (
-    <>
+    <div className="panel-container">
       <StageTemplate className='M3rdTemplate' stage={'Third place play-off'} matchesStage={match3rdPlace} />
       <StageTemplate className='FinalTemplate' stage={'Final'} matchesStage={finalMatch} defineChampion={defineChampion}/>
-      <div style={{display: champion? 'initial': 'none'}}>
+      <div className='champion-container' style={{display: champion? 'flex': 'none'}}>
         {champion? <img
           src={require(`./images/${strImgChampion}`)}
           alt={champion}
           className="champion" />: <></>}
-        <p>Congratulations, {champion}, you are the champion of FIFA World Cup Qatar 2022</p>
+        <p>{tCh('champion-congrats', {champion: tC(champion)})}</p>
+        {/* <p>Congratulations, {champion}, you are the champion of FIFA World Cup Qatar 2022</p> */}
       </div>
-    </>
+    </div>
 	);
 }

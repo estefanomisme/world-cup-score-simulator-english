@@ -1,22 +1,43 @@
-/* import { Context } from './TabBox';
-import { useContext } from 'react'; */
-/* import Flag8Star from './Flag8Star' */
-import './styles/Match.css'
+import { Context } from '../App';
+import { useContext } from 'react';
+import qatarTZtoLocalTZString, { monthName } from './functions/qatarTZtoLocalTZString';
+import './styles/Match.css';
+import { useTranslation } from 'react-i18next';
 
 function Match ({match, setScore}) {
-/*   const homeTeamLogo = teams.filter(team => team.name === match.home.name)[0].logo;
-  const awayTeamLogo = teams.filter(team => team.name === match.away.name)[0].logo; */
+
+  const [timezone, , , , , , ] = useContext(Context);
+  const [tC, ] = useTranslation('countries');
+  const [tM, ] = useTranslation('months');
+  const [tS, ] = useTranslation('stadiums');
+
+  function translateMonthFromString (dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = tM(monthName[date.getMonth()]);
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    let minutes = date.getMinutes();
+
+    if (minutes < 10) {minutes = '0' + minutes.toString()};
+
+    return (`${day} ${month} ${year} ${hours}:${minutes}`)
+  }
 
   return (
     <div className='matches-inline'>
       <div className="info-date-stadium">
-        <p>{match.details}</p>
+        <p>{translateMonthFromString(
+            timezone === 'Qatar' ?
+            match.date:
+            qatarTZtoLocalTZString(match.date)
+          )} - {tS(match.stadium)}</p>
       </div>
       <div className="match-score">
         <div className="label-home">
           <label
             htmlFor={`match_${match.match}-${match.home.name.toLowerCase()}`}>
-            {match.home.name}
+            {tC(match.home.name.replaceAll(' ', '-'))}
           </label>
         </div>
         <div className="input-score">
@@ -36,7 +57,7 @@ function Match ({match, setScore}) {
         </div>
         <div className="label-away">
           <label htmlFor={`match_${match.match}-${match.away.name.toLowerCase()}`}>
-            {match.away.name}
+            {tC(match.away.name.replaceAll(' ', '-'))}
           </label>
         </div>
       </div>
